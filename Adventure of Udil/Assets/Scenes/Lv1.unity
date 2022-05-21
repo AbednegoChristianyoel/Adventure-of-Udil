@@ -1209,6 +1209,7 @@ GameObject:
   - component: {fileID: 296086542}
   - component: {fileID: 296086541}
   - component: {fileID: 296086544}
+  - component: {fileID: 296086545}
   m_Layer: 0
   m_Name: kodok (2)
   m_TagString: Untagged
@@ -1268,7 +1269,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.201258, y: 2.0125787}
+    oldSize: {x: 2.1875, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1350,13 +1351,32 @@ MonoBehaviour:
   jumpForceX: 9
   jumpForceY: 7
   lastYPos: 0
-  currentAnim: {fileID: 0}
+  currentAnim: 0
   rb: {fileID: 296086541}
   spriteRenderer: {fileID: 296086543}
   anim: {fileID: 0}
-  idleTime: 2
+  idleTime: 3
   currentIdleTime: 0
   isIdle: 1
+--- !u!95 &296086545
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296086539}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5430c4be76b32247a5ffcef522c40b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &296755187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,6 +2101,7 @@ GameObject:
   - component: {fileID: 465974204}
   - component: {fileID: 465974203}
   - component: {fileID: 465974202}
+  - component: {fileID: 465974205}
   m_Layer: 0
   m_Name: elang (1)
   m_TagString: Untagged
@@ -2196,6 +2217,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &465974205
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465974200}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 016086f8f719646488d354d6b62071d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &475524336
 GameObject:
   m_ObjectHideFlags: 0
@@ -3154,6 +3194,7 @@ GameObject:
   - component: {fileID: 612617632}
   - component: {fileID: 612617628}
   - component: {fileID: 612617631}
+  - component: {fileID: 612617633}
   m_Layer: 0
   m_Name: tikus
   m_TagString: Untagged
@@ -3310,6 +3351,25 @@ CircleCollider2D:
   m_Offset: {x: -0.18, y: -0.39}
   serializedVersion: 2
   m_Radius: 0.4122616
+--- !u!95 &612617633
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612617626}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 45ced2a8d3db82a48b307e869a9625cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &667848966
 GameObject:
   m_ObjectHideFlags: 0
@@ -59324,6 +59384,7 @@ GameObject:
   - component: {fileID: 826950964}
   - component: {fileID: 826950963}
   - component: {fileID: 826950966}
+  - component: {fileID: 826950967}
   m_Layer: 0
   m_Name: kodok (1)
   m_TagString: Untagged
@@ -59383,7 +59444,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.201258, y: 2.0125787}
+    oldSize: {x: 2.1875, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -59465,13 +59526,32 @@ MonoBehaviour:
   jumpForceX: 6
   jumpForceY: 7
   lastYPos: 0
-  currentAnim: {fileID: 0}
+  currentAnim: 0
   rb: {fileID: 826950963}
   spriteRenderer: {fileID: 826950965}
   anim: {fileID: 0}
-  idleTime: 2
+  idleTime: 3
   currentIdleTime: 0
   isIdle: 1
+--- !u!95 &826950967
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826950961}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e235ed960393cbb42b427c95c792a2a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &859640684
 GameObject:
   m_ObjectHideFlags: 0
@@ -61746,6 +61826,7 @@ GameObject:
   - component: {fileID: 1510038891}
   - component: {fileID: 1510038887}
   - component: {fileID: 1510038890}
+  - component: {fileID: 1510038892}
   m_Layer: 0
   m_Name: tikus (1)
   m_TagString: Untagged
@@ -61902,6 +61983,25 @@ CircleCollider2D:
   m_Offset: {x: -0.16, y: -0.51}
   serializedVersion: 2
   m_Radius: 0.3052615
+--- !u!95 &1510038892
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510038885}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 45ced2a8d3db82a48b307e869a9625cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1518083766
 GameObject:
   m_ObjectHideFlags: 0
@@ -62109,6 +62209,7 @@ GameObject:
   - component: {fileID: 1555006696}
   - component: {fileID: 1555006698}
   - component: {fileID: 1555006695}
+  - component: {fileID: 1555006699}
   m_Layer: 0
   m_Name: elang
   m_TagString: Untagged
@@ -62224,6 +62325,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6691895, y: 0.842144}
   m_EdgeRadius: 0
+--- !u!95 &1555006699
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555006694}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4150bfd0e6e18e64da2bfb024e8f54bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1584376469
 GameObject:
   m_ObjectHideFlags: 0
@@ -62237,6 +62357,7 @@ GameObject:
   - component: {fileID: 1584376472}
   - component: {fileID: 1584376471}
   - component: {fileID: 1584376474}
+  - component: {fileID: 1584376475}
   m_Layer: 0
   m_Name: kodok
   m_TagString: Untagged
@@ -62296,7 +62417,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.201258, y: 2.0125787}
+    oldSize: {x: 2.1875, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -62378,13 +62499,32 @@ MonoBehaviour:
   jumpForceX: 7
   jumpForceY: 5
   lastYPos: 0
-  currentAnim: {fileID: 0}
+  currentAnim: 0
   rb: {fileID: 1584376471}
   spriteRenderer: {fileID: 1584376473}
   anim: {fileID: 0}
-  idleTime: 2
+  idleTime: 3
   currentIdleTime: 0
   isIdle: 1
+--- !u!95 &1584376475
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584376469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 004d95a13dc92bc43b111674bd9b30ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1620844568
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class EnemyJumping : MonoBehaviour
         Falling = 2
     };
 
-    public Animation currentAnim;
+    public Animations currentAnim;
 
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
@@ -32,6 +32,7 @@ public class EnemyJumping : MonoBehaviour
     public float idleTime = 2f;
     public float currentIdleTime = 0;
     public bool isIdle = true;
+    
 
     void Start()
     {
@@ -64,16 +65,19 @@ public class EnemyJumping : MonoBehaviour
             isFalling = false;
             isJumping = false;
             isIdle = true;
+            ChangeAnimation(Animations.Idle);
         }
         else if (transform.position.y > lastYPos && !isGrounded && !isIdle)
         {
             isJumping = true;
             isFalling = false;
+            ChangeAnimation(Animations.Jumping);
         }
         else if (transform.position.y < lastYPos && !isGrounded && !isIdle)
         {
             isJumping = false;
             isFalling = true;
+            ChangeAnimation(Animations.Falling);
         }
 
         lastYPos = transform.position.y;
@@ -94,5 +98,12 @@ public class EnemyJumping : MonoBehaviour
             direction = -1;
         }
         rb.velocity = new Vector2(jumpForceX * direction, jumpForceY);
+    }
+
+    void ChangeAnimation(Animations newAnim){
+        if (currentAnim != newAnim){
+            currentAnim = newAnim;
+            anim.SetInteger("kondisi", (int)newAnim);
+        }
     }
 }
