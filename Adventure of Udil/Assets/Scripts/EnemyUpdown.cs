@@ -7,6 +7,7 @@ public class EnemyUpdown : MonoBehaviour
     public int index = 0;
     public Vector2[] path;
     public float speed = 4;
+    public int damage = 25;
 
     void Update() {
         transform.position = Vector2.MoveTowards(transform.position, path[index], speed * Time.deltaTime);
@@ -17,5 +18,14 @@ public class EnemyUpdown : MonoBehaviour
                 index = 0;
             }
         }   
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) 
+    {
+        if (collision.tag=="Player")
+        {
+            Debug.Log($"{name} Triggered");
+            FindObjectOfType<HealthBar>().LoseHealth(damage);
+        }
     }
 }

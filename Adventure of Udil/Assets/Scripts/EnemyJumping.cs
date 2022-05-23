@@ -32,8 +32,8 @@ public class EnemyJumping : MonoBehaviour
     public float idleTime = 2f;
     public float currentIdleTime = 0;
     public bool isIdle = true;
+    public int damage = 25;
     
-
     void Start()
     {
         lastYPos = transform.position.y;
@@ -57,10 +57,10 @@ public class EnemyJumping : MonoBehaviour
             }
         }
 
-        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),
-        new Vector2(transform.position.x + 0.5f, transform.position.y - 0.51f), whatIsGround);
+        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.7f, transform.position.y - 0.9f),
+        new Vector2(transform.position.x + 0.7f, transform.position.y - 0.91f), whatIsGround);
 
-        if (isGrounded || isFalling)
+        if (isGrounded && isFalling)
         {
             isFalling = false;
             isJumping = false;
@@ -104,6 +104,15 @@ public class EnemyJumping : MonoBehaviour
         if (currentAnim != newAnim){
             currentAnim = newAnim;
             anim.SetInteger("kondisi", (int)newAnim);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) 
+    {
+        if (collision.tag=="Player")
+        {
+            Debug.Log($"{name} Triggered");
+            FindObjectOfType<HealthBar>().LoseHealth(damage);
         }
     }
 }

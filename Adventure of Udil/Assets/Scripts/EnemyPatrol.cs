@@ -13,6 +13,7 @@ public class EnemyPatrol : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public Collider2D bodyCollider;
+    public int damage = 25;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,15 @@ public class EnemyPatrol : MonoBehaviour
         }
 
         rb.velocity = new Vector2(-enemySpeed * Time.fixedDeltaTime, rb.velocity.y);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) 
+    {
+        if (collision.tag=="Player")
+        {
+            Debug.Log($"{name} Triggered");
+            FindObjectOfType<HealthBar>().LoseHealth(damage);
+        }
     }
 
     void Flip()

@@ -10,7 +10,8 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
-	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
+	[SerializeField] private Collider2D m_DisableCollider;				// A collider that will be disabled when crouching
+	[SerializeField] private Collider2D m_CrouchCollider;				// Collider crouch
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
@@ -32,6 +33,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
+		m_CrouchCollider.enabled = false;
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
 		if (OnLandEvent == null)
@@ -90,13 +92,15 @@ public class CharacterController2D : MonoBehaviour
 				move *= m_CrouchSpeed;
 
 				// Disable one of the colliders when crouching
-				if (m_CrouchDisableCollider != null)
-					m_CrouchDisableCollider.enabled = false;
+				if (m_DisableCollider != null && m_CrouchCollider != null)
+					m_CrouchCollider.enabled = true;
+					m_DisableCollider.enabled = false;
 			} else
 			{
 				// Enable the collider when not crouching
-				if (m_CrouchDisableCollider != null)
-					m_CrouchDisableCollider.enabled = true;
+				if (m_DisableCollider != null && m_CrouchCollider != null)
+					m_DisableCollider.enabled = true;
+					m_CrouchCollider.enabled = false;
 
 				if (m_wasCrouching)
 				{
@@ -126,7 +130,6 @@ public class CharacterController2D : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
-						Debug.Log("abc");
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, m_JumpForce);
