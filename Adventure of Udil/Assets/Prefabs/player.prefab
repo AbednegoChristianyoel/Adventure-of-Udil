@@ -196,7 +196,6 @@ MonoBehaviour:
   horizontalMove: 0
   jump: 0
   crouch: 0
-  hurtforce: 10
 --- !u!114 &8320355034564924642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,8 +217,7 @@ MonoBehaviour:
     m_Bits: 247
   m_GroundCheck: {fileID: 8320355035446000059}
   m_CeilingCheck: {fileID: 8320355035614875830}
-  m_DisableCollider: {fileID: 0}
-  m_CrouchCollider: {fileID: 0}
+  m_CrouchDisableCollider: {fileID: 7630961341497842407}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:

@@ -27,4 +27,12 @@ public class HealthBar : MonoBehaviour
             FindObjectOfType<LevelManager>().Restart();
         }
     }
+
+    private void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            LoseHealth(25);
+        }
+    }
 }
