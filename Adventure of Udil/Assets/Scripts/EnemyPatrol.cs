@@ -47,7 +47,7 @@ public class EnemyPatrol : MonoBehaviour
 
         rb.velocity = new Vector2(-enemySpeed * Time.fixedDeltaTime, rb.velocity.y);
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         if (collision.tag=="Player")

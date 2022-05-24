@@ -13,7 +13,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.tag=="Player")
         {
-            Debug.Log($"{name} Trigger");
+            Debug.Log($"{name} Triggered");
             FindObjectOfType<HealthBar>().LoseHealth(damage);
         }
     }
