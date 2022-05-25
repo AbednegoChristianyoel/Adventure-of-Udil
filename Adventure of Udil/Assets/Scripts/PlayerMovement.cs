@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
-    public CharacterController2D m_Grounded;
     public Animator anim;
     public float speed = 15f;
     public float horizontalMove = 0f;
@@ -27,9 +26,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
+        EnemyManager em = other.gameObject.GetComponent<EnemyManager>();
         if(other.gameObject.tag == "Enemy"){
             if (falling == true){
-                Destroy(other.gameObject);
+                em.JumpOn();
                 Jump();
                 Debug.Log("mati");
             }else{
@@ -67,6 +67,14 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
+
+        if(!controller.m_Grounded){
+            anim.SetBool("jumping", true);
+        }else if(controller.m_Grounded){
+            anim.SetBool("jumping", false);
+        }
+
+        anim.SetFloat("y_velocity", rb.velocity.y);
     }
 
     public void OnLand(){

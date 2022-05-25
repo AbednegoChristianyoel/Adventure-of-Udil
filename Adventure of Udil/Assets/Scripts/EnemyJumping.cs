@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyJumping : MonoBehaviour
+public class EnemyJumping : EnemyManager
 {
     public bool faceRight = false;
     public LayerMask whatIsGround;
@@ -27,19 +27,18 @@ public class EnemyJumping : MonoBehaviour
 
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
-    public Animator anim;
 
     public float idleTime = 2f;
     public float currentIdleTime = 0;
     public bool isIdle = true;
     public int damage = 25;
     
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         lastYPos = transform.position.y;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
