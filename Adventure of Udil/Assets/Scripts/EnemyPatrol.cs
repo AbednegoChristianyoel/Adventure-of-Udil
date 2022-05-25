@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPatrol : MonoBehaviour
+public class EnemyPatrol : EnemyManager
 {
     [HideInInspector] 
     public bool patrollingEnemy;
@@ -15,9 +15,11 @@ public class EnemyPatrol : MonoBehaviour
     public Collider2D bodyCollider;
     public int damage = 25;
 
+ 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         patrollingEnemy = true;
     }
 
@@ -64,5 +66,4 @@ public class EnemyPatrol : MonoBehaviour
         enemySpeed *= -1;
         patrollingEnemy = true;
     }
-
 }

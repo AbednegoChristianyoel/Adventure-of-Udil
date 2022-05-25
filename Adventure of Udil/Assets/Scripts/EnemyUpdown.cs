@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyUpdown : MonoBehaviour
+public class EnemyUpdown : EnemyManager
 {
     public int index = 0;
     public Vector2[] path;
     public float speed = 4;
     public int damage = 25;
+
+    protected override void Start()
+    {
+        base.Start();
+    }
 
     void Update() {
         transform.position = Vector2.MoveTowards(transform.position, path[index], speed * Time.deltaTime);
