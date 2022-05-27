@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 2816046481532883599}
   - component: {fileID: 8320355034564924643}
   - component: {fileID: 8320355034564924642}
-  - component: {fileID: 2041244263978282871}
   m_Layer: 8
   m_Name: player
   m_TagString: Untagged
@@ -196,6 +195,8 @@ MonoBehaviour:
   horizontalMove: 0
   jump: 0
   crouch: 0
+  falling: 0
+  jumpForce: 10
   hurtforce: 10
 --- !u!114 &8320355034564924642
 MonoBehaviour:
@@ -220,6 +221,7 @@ MonoBehaviour:
   m_CeilingCheck: {fileID: 8320355035614875830}
   m_DisableCollider: {fileID: 0}
   m_CrouchCollider: {fileID: 0}
+  m_Grounded: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -250,18 +252,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2041244263978282871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8320355034564924649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f7df428c4d2e5644ab3feb87fe094b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8320355035446000058
 GameObject:
   m_ObjectHideFlags: 0
