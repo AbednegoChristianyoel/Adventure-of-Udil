@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     private Material matWhite;
     private Material matDefault;
     SpriteRenderer sr;
+    public AudioSource KillSound;
+    public AudioSource HurtSound;
+    public AudioSource JumpSound;
     [SerializeField] private float hurtforce = 10f;
 
     private void Start() {
@@ -30,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.tag == "Enemy"){
             if (falling == true){
                 em.JumpOn();
+                KillSound.Play();
                 Jump();
                 Debug.Log("mati");
             }else{
@@ -41,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
                     rb.velocity = new Vector2(hurtforce, rb.velocity.y);
                 }
                 Invoke("ResetMaterial", .2f);
+                HurtSound.Play();
             } 
         }
     }
@@ -58,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
             anim.SetBool("jumping", true);
             falling = true;
+            JumpSound.Play();
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -70,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(!controller.m_Grounded){
             anim.SetBool("jumping", true);
+            
         }else if(controller.m_Grounded){
             anim.SetBool("jumping", false);
         }
